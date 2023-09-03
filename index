@@ -1,0 +1,31 @@
+<!DOCTYPE htmal>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>IMEBCOP</title>
+</head>
+<body>
+    <script>
+      const AS_URL_BASE="https://script.google.com/macros/s/AKfycby8QsOOKez2WKQ5LqMl2g7a9Zk7WGDqxNaVMyLP6O8f7BLT4L_xO5dthFQRkzonfykFUA/exec";
+     var url = document.location.href;
+     var k = url.substr(url.lastIndexOf("k=")+2);
+    
+    if(k){
+      fetch(AS_URL_BASE+'?k='+k)
+      .then(r => r.text())
+      .then((r) => {
+        console.log(r);
+        //document.write(r);
+        if(r){
+          document.location.replace(r);
+        }
+      })
+      .catch(err => console.log(err))
+    }
+  </script>
+  
+  <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+      
+    </script>
+</body>
+</html>
